@@ -1,0 +1,1 @@
+# This file contains all the functions for the app to use in scipt1 and script2
