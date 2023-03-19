@@ -14,7 +14,7 @@ def test_read_csv_file():
 
 def test_remove_duplicates():
     # Read the contents of a CSV file using the read_csv function
-    data = read_csv("clean_results.csv")
+    data = read_csv("results.csv")
     # Call the remove_duplicates function to remove duplicate rows from the data
     unique_data = remove_duplicates(data)
     # Create a set of unique IDs from the unique_data list to check that all rows are unique
