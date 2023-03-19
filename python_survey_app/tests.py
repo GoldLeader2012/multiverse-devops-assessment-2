@@ -21,3 +21,19 @@ def test_remove_duplicates():
     unique = set(row[0] for row in unique_data)
     # Check that the number of unique rows in the unique_data list matches the number of unique IDs
     assert len(unique_data) == len(unique)
+
+
+def test_clean_data():
+    # Create some sample data
+    data = [
+        ["1", "charissa", "clark", "yes", "c", "7"],
+        ["2", "richard", "McKinney", "yes", "b", "7"],
+        ["3", "patience", "reeves", "yes", "b", "9"],
+    ]
+    # Call the clean_data function to clean the data
+    cleaned_data = clean_data(data)
+    # Assert that the cleaned_data list only contains rows where answer_3 is between 1 and 10 and where names are capitalized
+    for row in cleaned_data:
+        assert 1 <= int(row[5]) <= 10
+        assert row[1].istitle()
+        assert row[2].istitle()

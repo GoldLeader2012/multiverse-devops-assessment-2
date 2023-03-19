@@ -19,3 +19,23 @@ def remove_duplicates(data):
             unique_data.append(row)
             user_ids.add(row[0])
     return unique_data
+
+
+def clean_data(data):
+    cleaned_data = []
+    for row in data:
+        try:
+            row[2] = row[2].capitalize()
+            row[1] = row[1].capitalize()
+            answer_3 = int(row[5])
+            if answer_3 >= 1 and answer_3 <= 10:
+                cleaned_data.append(row)
+        except ValueError:
+            continue
+    return cleaned_data
+
+
+def write_csv(file_path, data):
+    with open(file_path, "w") as file:
+        for row in data:
+            file.write(",".join(row) + "\n")
