@@ -1,4 +1,4 @@
-from python_survey_app.csvhelper.modules import write_csv
+from csvhelper.modules import write_csv
 
 # Set the output file path
 output_file = "clean_results.csv"

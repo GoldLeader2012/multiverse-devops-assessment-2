@@ -1,4 +1,4 @@
-from python_survey_app.csvhelper.modules import read_csv, remove_duplicates, clean_data
+from csvhelper.modules import read_csv, remove_duplicates, clean_data
 
 # Set the input file path
 input_file = "results.csv"
