@@ -1,6 +1,4 @@
-# The Pytests for the functions defined in the modules.py file can be found in the tests.py file.
-
-from csvhelper.modules import read_csv, remove_duplicates, clean_data
+from python_survey_app.csvhelper.modules import read_csv, remove_duplicates, clean_data
 
 
 def test_read_csv_file():
