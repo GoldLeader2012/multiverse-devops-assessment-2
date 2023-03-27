@@ -1,4 +1,4 @@
-from python_survey_app.csvhelper.modules import read_csv, remove_duplicates, clean_data
+from csvhelper.modules import read_csv, remove_duplicates, clean_data
 
 
 def test_read_csv_file():
