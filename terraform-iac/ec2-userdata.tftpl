@@ -1,8 +1,11 @@
 #!/bin/bash -xe
 yum update -y
 yum clean metadata
-yum install -y unzip nginx python3
-amazon-linux-extras enable nginx1 python3
+yum install -y unzip 
+yum install -y nginx 
+yum install -y python3
+amazon-linux-extras enable nginx1 
+amazon-linux-extras enable python3 
 systemctl enable nginx
 systemctl start nginx
 cat <<EOT > /usr/share/nginx/html/index.html
@@ -38,10 +41,9 @@ mkdir -p /root/code
 aws s3 cp s3://${s3_bucket}/code.zip /tmp/code.zip
 unzip /tmp/code.zip -d /root/code/
 aws s3 cp s3://${s3_bucket}/results.csv /root/code/results.csv
-cd code/python_survey_app/
+cd /root/code/python_survey_app/
 python3 /root/code/python_survey_app/script1.py
-python3 /root/code/python_survey_app/script2.py > /root/code/clean_results.csv
-aws s3 cp /root/code/clean_results.csv s3://${s3_bucket}/clean_results.csv
+aws s3 cp /root/code/python_survey_app\clean_results.csv s3://${s3_bucket}/clean_results.csv
 EOT
 cat <<EOT > /etc/cron.d/mvws9
 * * * * * root /bin/bash /root/mvws9.sh
