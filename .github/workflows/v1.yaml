@@ -21,4 +21,4 @@ jobs:
       run: pip install pytest pytest-cov
     - name: Run Pytest
       run: pytest
-      working-directory: python_survey_app
+      working-directory: iac/app
